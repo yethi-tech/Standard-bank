@@ -1,0 +1,14 @@
+tenjin:
+  persistence:
+    size: "5Gi" # Size of the storage
+    storageClassName: "standard" # Name of the storage class (adjust based on your cluster)
+  service:
+    type: NodePort
+    port: 8080
+environment:
+  DATABASE_URL: "jdbc:postgresql://dbs-san-uga-nonprod-sharedpostgresmi.postgres.database.azure.com:5432/sdb-sbuga-uatautomationtenjin"
+  POSTGRES_USER: sqladmim
+  POSTGRES_PASSWORD: .<pB_esLd2|pyxwuypEN5~szY.
+  DEFAULT_USER_PASSWORD: Welcome@2023
+  TENJIN_HOST_NAME: http://localhost
+  TENJIN_ALLOWED_URL: http://localhost
