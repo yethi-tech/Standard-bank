@@ -2,9 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-filebeat-config
+  namespace: kube-system
   labels:
     k8s-app: filebeat
-    namespace: kube-system
 data:
   filebeat.yml: |
     filebeat.inputs:
