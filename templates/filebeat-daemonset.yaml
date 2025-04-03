@@ -31,7 +31,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: filebeat-config
+            name: {{ .Release.Name }}-filebeat-config
         - name: varlog
           hostPath:
             path: /var/log
