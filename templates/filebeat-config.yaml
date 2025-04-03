@@ -21,7 +21,7 @@ data:
 
     output.elasticsearch:
       hosts:
-        - "http://{{ .Release.Name }}-elasticsearch:9200"
+        - "http://{{ .Release.Name }}-elasticsearch.default.svc.cluster.local:9200"
       username: "elastic"
       index: "filebeat-%{[agent.version]}-%{+yyyy.MM.dd}"
 
