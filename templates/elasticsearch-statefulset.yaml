@@ -59,7 +59,8 @@ spec:
     spec:
       accessModes:
         - {{ .Values.elasticsearch.persistence.accessModes | default "ReadWriteOnce" }}  # Templated accessMode
-      storageClassName: {{ .Values.elasticsearch.persistence.storageClassName | default "standard" }}  # Templated storageClassName
+      storageClassName: {{ .Values.elasticsearch.persistence.storageClassName | default "managed-csi" }}  # Templated storageClassName
+      volumeName: pv-elasticsearch
       resources:
         requests:
-          storage: {{ .Values.elasticsearch.persistence.size | default "5Gi" }}  # Templated size from values.yaml
+          storage: {{ .Values.elasticsearch.persistence.size | default "10Gi" }}  # Templated size from values.yaml
