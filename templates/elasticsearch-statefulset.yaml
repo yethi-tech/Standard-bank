@@ -58,9 +58,9 @@ spec:
         "helm.sh/resource-policy": keep  # Prevents PVC deletion when StatefulSet is deleted
     spec:
       accessModes:
-        - {{ .Values.elasticsearch.persistence.accessModes | default "ReadWriteOnce" }}  # Templated accessMode
-      storageClassName: {{ .Values.elasticsearch.persistence.storageClassName | default "managed-csi" }}  # Templated storageClassName
-      volumeName: pv-elasticsearch
+        - {{ .Values.elasticsearch.persistence.accessModes | default "ReadWriteOnce" }}
+      storageClassName: {{ .Values.elasticsearch.persistence.storageClassName | default "managed-csi" }}
+      volumeName: pv-elasticsearchtenjin  # Match the PV name
       resources:
         requests:
-          storage: {{ .Values.elasticsearch.persistence.size | default "10Gi" }}  # Templated size from values.yaml
+          storage: {{ .Values.elasticsearch.persistence.size | default "10Gi" }}
