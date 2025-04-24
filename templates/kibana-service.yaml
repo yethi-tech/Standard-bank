@@ -4,7 +4,10 @@ metadata:
   name: {{ .Release.Name }}-kibana
   labels:
     name: {{ .Release.Name }}-kibana
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
+  type: LoadBalancer
   selector:
     app: kibana
   ports:

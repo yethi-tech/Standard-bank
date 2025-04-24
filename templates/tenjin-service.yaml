@@ -4,11 +4,13 @@ metadata:
   name: {{ .Release.Name }}-tenjin-core
   labels:
     app: {{ .Release.Name }}-tenjin-core
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
-  type: {{.Values.tenjin.service.type }}  
+  type: LoadBalancer
   selector:
     app: tenjin
   ports:
     - protocol: TCP
-      port: {{.Values.tenjin.service.port }}
+      port: {{ .Values.tenjin.service.port }}
       targetPort: 8080
