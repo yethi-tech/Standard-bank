@@ -20,47 +20,47 @@ spec:
         runAsGroup: 1000
         runAsUser: 1000
       containers:
-      - name: tenjin-es
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.3.3
-        ports:
-        - containerPort: 9200  # HTTP API
-        - containerPort: 9300  # Transport
+        - name: tenjin-es
+          image: docker.elastic.co/elasticsearch/elasticsearch:8.3.3
+          ports:
+            - containerPort: 9200  # HTTP API
+            - containerPort: 9300  # Transport
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "1"
+            limits:
+              memory: "4Gi"
+              cpu: "2"
+          env:
+            - name: discovery.type
+              value: "single-node"
+            - name: ES_JAVA_OPTS
+              value: {{ .Values.elasticsearch.config.ES_JAVA_OPTS }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-elasticsearch-config
+          volumeMounts:
+            - name: elasticsearch-data
+              mountPath: /usr/share/elasticsearch/data
+          readinessProbe:
+            httpGet:
+              path: /_cluster/health
+              port: 9200
+            initialDelaySeconds: 30
+            periodSeconds: 10
+  volumeClaimTemplates:
+    - metadata:
+        name: elasticsearch-data
+        labels:
+          app: elasticsearch
+        annotations:
+          "helm.sh/resource-policy": keep  # Prevents PVC deletion when StatefulSet is deleted
+      spec:
+        accessModes:
+          - {{ .Values.elasticsearch.persistence.accessModes | default "ReadWriteOnce" }}
+        storageClassName: {{ .Values.elasticsearch.persistence.storageClassName | default "managed-csi" }}
+        volumeName: elasticsearch-pv  # Match with the existing PV name
         resources:
           requests:
-            memory: "2Gi"
-            cpu: "1"
-          limits:
-            memory: "4Gi"
-            cpu: "2"
-        env:
-        - name: discovery.type
-          value: "single-node"
-        - name: ES_JAVA_OPTS
-          value: {{ .Values.elasticsearch.config.ES_JAVA_OPTS }}  # Use the value from values.yaml
-        envFrom:
-        - configMapRef:
-            name: {{ .Release.Name }}-elasticsearch-config
-        volumeMounts:
-        - name: elasticsearch-data
-          mountPath: /usr/share/elasticsearch/data
-        readinessProbe:
-          httpGet:
-            path: /_cluster/health
-            port: 9200
-          initialDelaySeconds: 30
-          periodSeconds: 10
-  volumeClaimTemplates:
-  - metadata:
-      name: elasticsearch-data
-      labels:
-        app: elasticsearch
-      annotations:
-        "helm.sh/resource-policy": keep  # Prevents PVC deletion when StatefulSet is deleted
-    spec:
-      accessModes:
-        - {{ .Values.elasticsearch.persistence.accessModes | default "ReadWriteOnce" }}
-      storageClassName: {{ .Values.elasticsearch.persistence.storageClassName | default "managed-csi" }}
-      volumeName: pv-elasticsearchtenjin  # Match the PV name
-      resources:
-        requests:
-          storage: {{ .Values.elasticsearch.persistence.size | default "10Gi" }}
+            storage: {{ .Values.elasticsearch.persistence.size | default "10Gi" }}

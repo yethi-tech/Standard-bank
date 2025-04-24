@@ -55,6 +55,6 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.tenjin.persistence.size | default "10Gi" }}  # Templated size from values.yaml
+      storage: {{ .Values.tenjin.persistence.size | default "10Gi" }}
   storageClassName: {{ .Values.tenjin.persistence.storageClassName | default "managed-csi" }}
-  volumeName: pv-tenjin 
+  volumeName: tenjin-pv  # Corrected to match the actual PV name
