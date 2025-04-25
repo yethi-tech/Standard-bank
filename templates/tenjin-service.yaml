@@ -14,3 +14,6 @@ spec:
     - protocol: TCP
       port: {{ .Values.tenjin.service.port }}
       targetPort: 8080
+    - protocol: TCP
+      port: 9446
+      targetPort: 9446
