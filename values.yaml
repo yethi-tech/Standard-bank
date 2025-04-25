@@ -24,16 +24,3 @@ environment:
   TENJIN_HOST_NAME: http://tenjin.stanbicbank.co.ug
   TENJIN_ALLOWED_URL: https://10.167.134.86:9446
 
-ingress:
-  enabled: true
-  className: nginx
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: "20m" 
-  bodySize: "20m"
-  services:
-    - host: "http://tenjin.stanbicbank.co.ug"
-      paths:
-        - path: /
-          pathType: Prefix
-          serviceName: "{{ .Release.Name }}-tenjin-core"
-          servicePort: 8080
