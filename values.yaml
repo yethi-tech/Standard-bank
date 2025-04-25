@@ -21,7 +21,7 @@ environment:
   POSTGRES_USER: sqladmim
   POSTGRES_PASSWORD: .<pB_esLd2|pyxwuypEN5~szY.
   DEFAULT_USER_PASSWORD: Welcome@2023
-  TENJIN_HOST_NAME: https://10.167.134.86:9446
+  TENJIN_HOST_NAME: http://tenjin.stanbicbank.co.ug
   TENJIN_ALLOWED_URL: https://10.167.134.86:9446
 
 ingress:
@@ -31,7 +31,7 @@ ingress:
     nginx.ingress.kubernetes.io/proxy-body-size: "20m" 
   bodySize: "20m"
   services:
-    - host: "tenjin.stanbicbank.co.ug"
+    - host: "http://tenjin.stanbicbank.co.ug"
       paths:
         - path: /
           pathType: Prefix
