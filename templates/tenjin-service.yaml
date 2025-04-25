@@ -5,15 +5,17 @@ metadata:
   labels:
     app: {{ .Release.Name }}-tenjin-core
   annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"  # For internal LoadBalancer (remove if not needed)
 spec:
   type: LoadBalancer
   selector:
     app: tenjin
   ports:
-    - protocol: TCP
-      port: {{ .Values.tenjin.service.port }}
-      targetPort: 8080
-    - protocol: TCP
-      port: 9446
-      targetPort: 9446
+    - name: http-8080  # Unique name for the first port
+      protocol: TCP
+      port: {{ .Values.tenjin.service.port }}  # External port 8080 (or whatever value you use)
+      targetPort: 8080  # Internal port 8080 on your pods
+    - name: http-9496  # Unique name for the second port
+      protocol: TCP
+      port: 9496  # External port 9496
+      targetPort: 9496  # Internal port 9496 on your pods
