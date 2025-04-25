@@ -15,7 +15,7 @@ spec:
       protocol: TCP
       port: {{ .Values.tenjin.service.port }}  # External port 8080 (or whatever value you use)
       targetPort: 8080  # Internal port 8080 on your pods
-    - name: http-9496  # Unique name for the second port
+    - name: http-9446  # Unique name for the second port
       protocol: TCP
-      port: 9496  # External port 9496
-      targetPort: 9496  # Internal port 9496 on your pods
+      port: 9446  # External port 9496
+      targetPort: 9446  # Internal port 9496 on your pods
