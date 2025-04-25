@@ -23,3 +23,17 @@ environment:
   DEFAULT_USER_PASSWORD: Welcome@2023
   TENJIN_HOST_NAME: https://10.167.134.86:9446
   TENJIN_ALLOWED_URL: https://10.167.134.86:9446
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "20m" 
+  bodySize: "20m"
+  services:
+    - host: "tenjin.stanbicbank.co.ug"
+      paths:
+        - path: /
+          pathType: Prefix
+          serviceName: "{{ .Release.Name }}-tenjin-core"
+          servicePort: 8080
