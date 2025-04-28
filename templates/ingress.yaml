@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "http://tenjin.stanbicbank.co.ug"
+    - host: "tenjin.stanbicbank.co.ug"
       http:
         paths:
           - path: /
