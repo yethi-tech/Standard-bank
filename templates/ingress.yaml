@@ -8,6 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "20m"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - "tenjin.stanbicbank.co.ug"
+      secretName: tenjin-tls-secret
   rules:
     - host: "tenjin.stanbicbank.co.ug"
       http:
