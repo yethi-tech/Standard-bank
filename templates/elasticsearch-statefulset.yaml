@@ -21,14 +21,14 @@ spec:
         runAsUser: 1000
       containers:
         - name: tenjin-es
-          image: docker.elastic.co/elasticsearch/elasticsearch:8.3.3
+          image: acrugauatautomationtenjin.azurecr.io/yethitech/elasticsearch:8.3.3
           ports:
             - containerPort: 9200  # HTTP API
             - containerPort: 9300  # Transport
           resources:
             requests:
-              memory: "2Gi"
-              cpu: "1"
+              memory: "4Gi"
+              cpu: "2"
             limits:
               memory: "4Gi"
               cpu: "2"

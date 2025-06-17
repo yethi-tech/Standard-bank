@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: tenjin-core
-          image: yethitech/tenjin-enterprise:4.9.1
+          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.9.1
           ports:
             - containerPort: 8080
           envFrom:
@@ -25,6 +25,11 @@ spec:
           volumeMounts:
             - name: tenjin-data-volume
               mountPath: /root  # Mounting the PVC to the container's /backend directory
+          securityContext:
+            runAsUser: 1000
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            fsGroup: 1000
       volumes:
         - name: tenjin-data-volume
           persistentVolumeClaim:
