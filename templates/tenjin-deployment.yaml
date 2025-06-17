@@ -14,6 +14,11 @@ spec:
       labels:
         app: tenjin
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
+        fsGroup: 1000
+
       containers:
         - name: tenjin-core
           image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.9.1
@@ -24,16 +29,13 @@ spec:
                 name: {{ .Release.Name }}-configmaptenjin
           volumeMounts:
             - name: tenjin-data-volume
-              mountPath: /root  # Mounting the PVC to the container's /backend directory
+              mountPath: /root
           securityContext:
-            runAsUser: 1000
-            runAsNonRoot: true
             allowPrivilegeEscalation: false
-            fsGroup: 1000
       volumes:
         - name: tenjin-data-volume
           persistentVolumeClaim:
-            claimName: tenjin-data-volume   # Ensuring the claimName is aligned
+            claimName: tenjin-data-volume
       initContainers:
         - name: wait-for-dependencies
           image: busybox
@@ -46,7 +48,6 @@ spec:
                 sleep 5
               done
 ---
-# PersistentVolumeClaim definition (dynamic provisioning)
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -54,7 +55,7 @@ metadata:
   labels:
     app: tenjin
   annotations:
-    "helm.sh/resource-policy": "keep"  # Prevent PVC deletion when uninstalling the Helm chart
+    "helm.sh/resource-policy": "keep"
 spec:
   accessModes:
     - ReadWriteOnce
@@ -62,4 +63,4 @@ spec:
     requests:
       storage: {{ .Values.tenjin.persistence.size | default "10Gi" }}
   storageClassName: {{ .Values.tenjin.persistence.storageClassName | default "managed-csi" }}
-  volumeName: tenjin-pv  # Corrected to match the actual PV name
+  volumeName: tenjin-pv
