@@ -3,42 +3,42 @@ entries:
   standard-bank:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-04T11:05:25.4083975+05:30"
+    created: "2025-07-04T11:20:59.4774346+05:30"
     description: A Helm chart for Kubernetes
-    digest: 333cbee8d707d70273b91026f89721280a3e398f277d1b61bd8e16f78c56aeb8
+    digest: 31a2c891d599a7055e7b447f098f3291593ae81befa4a4756ea1bb9eeac458c1
     name: standard-bank
     type: application
     urls:
-    - https://yethi-tech.github.io/helm-tenjin4.0/version-4.10.0/standard-bank-4.10.0.tgz
+    - https://yethi-tech.github.io/Standard-bank/version-4.10.0/standard-bank-4.10.0.tgz
     version: 4.10.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-04T11:05:25.4130544+05:30"
+    created: "2025-07-04T11:20:59.48079+05:30"
     description: A Helm chart for Kubernetes
     digest: 6f7f741114354a22df474ec001d778b8f688320f998fe37bf0af062b498e5b2a
     name: standard-bank
     type: application
     urls:
-    - https://yethi-tech.github.io/helm-tenjin4.0/version-4.9.1/standard-bank-4.9.1.tgz
+    - https://yethi-tech.github.io/Standard-bank/version-4.9.1/standard-bank-4.9.1.tgz
     version: 4.9.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-04T11:05:25.4108606+05:30"
+    created: "2025-07-04T11:20:59.4791061+05:30"
     description: A Helm chart for Kubernetes
     digest: 0255abf8835fefffc0cafbe71fb19972f781aade567301aaff710e3f64d5ffd5
     name: standard-bank
     type: application
     urls:
-    - https://yethi-tech.github.io/helm-tenjin4.0/version-4.9.0/standard-bank-4.9.0.tgz
+    - https://yethi-tech.github.io/Standard-bank/version-4.9.0/standard-bank-4.9.0.tgz
     version: 4.9.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-04T11:05:25.4060779+05:30"
+    created: "2025-07-04T11:20:59.4752771+05:30"
     description: A Helm chart for Kubernetes
     digest: 8bb2468615ce74398acf0b540de86d433d903af6d70765bf12938a1131971fd8
     name: standard-bank
     type: application
     urls:
-    - https://yethi-tech.github.io/helm-tenjin4.0/standard-bank-0.1.0.tgz
+    - https://yethi-tech.github.io/Standard-bank/standard-bank-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-04T11:05:25.4040663+05:30"
+generated: "2025-07-04T11:20:59.4736389+05:30"
