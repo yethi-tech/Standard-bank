@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: kibana
-        image: acrugauatautomationtenjin.azurecr.io/yethitech/kibana:8.3.3
+        image: acrugauatautomationtenjin.azurecr.io/yethitech/kibana:8.17.6
         ports:
         - containerPort: 5601
         env:

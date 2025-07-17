@@ -21,7 +21,7 @@ spec:
         runAsUser: 1000
       containers:
         - name: tenjin-es
-          image: acrugauatautomationtenjin.azurecr.io/yethitech/elasticsearch:8.3.3
+          image: acrugauatautomationtenjin.azurecr.io/yethitech/elasticsearch:8.17.6
           ports:
             - containerPort: 9200  # HTTP API
             - containerPort: 9300  # Transport
