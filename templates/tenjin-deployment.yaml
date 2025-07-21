@@ -21,7 +21,7 @@ spec:
 
       containers:
         - name: tenjin-core
-          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.10.0
+          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.10.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -33,6 +33,13 @@ spec:
               mountPath: /root
           securityContext:
             allowPrivilegeEscalation: false
+          resources:
+            requests:
+              cpu: "4"
+              memory: "8Gi"
+            limits:
+              cpu: "4"
+              memory: "8Gi"
       volumes:
         - name: tenjin-data-volume
           persistentVolumeClaim:

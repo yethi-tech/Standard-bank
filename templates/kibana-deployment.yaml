@@ -22,3 +22,10 @@ spec:
         env:
         - name: ELASTICSEARCH_HOSTS
           value: "http://{{ .Release.Name }}-elasticsearch:9200"
+        resources:
+          requests:
+            cpu: "1"
+            memory: "2Gi"
+          limits:
+            cpu: "1"
+            memory: "2Gi"

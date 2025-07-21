@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  standard-bank:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-21T12:02:23.4215221+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 3411fa278780083661b98efcb987975bcd43f96142a6e86c142e231c449cb377
+    name: standard-bank
+    type: application
+    urls:
+    - https://yethi-tech.github.io/Standard-bank/version-4.10.1/standard-bank-4.10.1.tgz
+    version: 4.10.1
+generated: "2025-07-21T12:02:23.4199545+05:30"
