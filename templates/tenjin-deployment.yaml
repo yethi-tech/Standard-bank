@@ -21,7 +21,7 @@ spec:
 
       containers:
         - name: tenjin-core
-          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.10.1
+          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.11.1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
