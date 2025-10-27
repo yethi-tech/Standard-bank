@@ -22,7 +22,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: tenjin-core
-          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.11.2
+          image: acrugauatautomationtenjin.azurecr.io/yethitech/tenjin-enterprise:4.12.1_stanbic
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
