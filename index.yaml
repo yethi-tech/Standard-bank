@@ -3,9 +3,9 @@ entries:
   standard-bank:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4520489+05:30"
+    created: "2025-10-30T11:08:22.6892974+05:30"
     description: A Helm chart for Kubernetes
-    digest: 0dc2b3d0906c42bc6953b2b1e5c08af1db5334143e9f0a611b89deb3211094c0
+    digest: 7e499866017fa2a564edf72de200aa872553ad63881a1cd73b1c40ed4aed21a6
     name: standard-bank
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 4.12.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4482892+05:30"
+    created: "2025-10-30T11:08:22.682957+05:30"
     description: A Helm chart for Kubernetes
     digest: 2999804b6bec7a90b23e83eaede08b9ffa42599c48b749026b820c8e6078edea
     name: standard-bank
@@ -23,7 +23,7 @@ entries:
     version: 4.11.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4462141+05:30"
+    created: "2025-10-30T11:08:22.6796129+05:30"
     description: A Helm chart for Kubernetes
     digest: db9011350f47f1c28632f593cfbccefe2cb9cc58e80cf1ca082e070581b217a8
     name: standard-bank
@@ -33,7 +33,7 @@ entries:
     version: 4.11.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4446493+05:30"
+    created: "2025-10-30T11:08:22.6768019+05:30"
     description: A Helm chart for Kubernetes
     digest: 3411fa278780083661b98efcb987975bcd43f96142a6e86c142e231c449cb377
     name: standard-bank
@@ -43,7 +43,7 @@ entries:
     version: 4.10.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4430797+05:30"
+    created: "2025-10-30T11:08:22.6746027+05:30"
     description: A Helm chart for Kubernetes
     digest: da7ae190ffc6fdc6b9661d9d5ce978fb45f940d5ec812e6cbd40aa447c4a617b
     name: standard-bank
@@ -53,7 +53,7 @@ entries:
     version: 4.10.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4536115+05:30"
+    created: "2025-10-30T11:08:22.6930123+05:30"
     description: A Helm chart for Kubernetes
     digest: 6f7f741114354a22df474ec001d778b8f688320f998fe37bf0af062b498e5b2a
     name: standard-bank
@@ -63,7 +63,7 @@ entries:
     version: 4.9.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4530897+05:30"
+    created: "2025-10-30T11:08:22.6909395+05:30"
     description: A Helm chart for Kubernetes
     digest: 0255abf8835fefffc0cafbe71fb19972f781aade567301aaff710e3f64d5ffd5
     name: standard-bank
@@ -73,7 +73,7 @@ entries:
     version: 4.9.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-10-27T11:26:43.4409565+05:30"
+    created: "2025-10-30T11:08:22.6723491+05:30"
     description: A Helm chart for Kubernetes
     digest: 8bb2468615ce74398acf0b540de86d433d903af6d70765bf12938a1131971fd8
     name: standard-bank
@@ -81,4 +81,4 @@ entries:
     urls:
     - https://yethi-tech.github.io/Standard-bank/standard-bank-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-27T11:26:43.4399046+05:30"
+generated: "2025-10-30T11:08:22.6706995+05:30"
